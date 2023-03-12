@@ -1,0 +1,85 @@
+
+.acc-container,
+.heading{
+    width: 400px;
+    margin: 10px auto 30px auto;
+}
+
+.heading{
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
+
+.smile{
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.acc-container article{
+    display: flex;
+    justify-content: center;
+}
+
+.acc-container input{
+    /* visibility: hidden; */
+    display: none;
+}
+
+/* C помощью него мы будем симулировать нажатие на input. Добавим относительное позиционирование и z-index. Для красоты отображения укажем градиент:  */
+.acc-container label{
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    padding: 5px 20px;
+    position: relative;
+    z-index: 20;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    color: #777;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+    line-height: 33px;
+    font-size: 19px;
+    background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea));
+	background: -webkit-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+	background: -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+	background: -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+	background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
+	box-shadow: 
+		0px 0px 0px 1px rgba(155,155,155,0.3), 
+		1px 0px 0px 0px rgba(255,255,255,0.9) inset, 
+		0px 2px 2px rgba(0,0,0,0.1);
+}
+
+.acc-container label:hover{
+    background: #fff;
+}
+
+/* при открытом блоке меню: */
+.acc-container input:checked + label,
+.acc-container input:checked + label:hover{
+    background: #c6e1ec;
+    color: #3d7489;
+    text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+    box-shadow: 
+        0px 0px 0px 1px rgba(155,155,155,0.3), 
+        0px 2px 2px rgba(0,0,0,0.1);
+}
+
+/* С помощью псевдо-класса :after добавим иконки стрелочек вверх и вниз для label при наведении */
+.acc-container label:hover:after,
+.acc-container input:checked + label:hover:after{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 13px;
+    top: 7px;
+    background: transparent url(./assets/icon/plus.svg) no-repeat center center;  
+}
+
+.acc-container input:checked + label:hover:after {
+    background-image: url(./assets/icon/cancel-circle.svg);
+}
