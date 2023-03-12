@@ -23,7 +23,6 @@
 }
 
 .acc-container input{
-    /* visibility: hidden; */
     display: none;
 }
 
@@ -69,8 +68,8 @@
 }
 
 /* С помощью псевдо-класса :after добавим иконки стрелочек вверх и вниз для label при наведении */
-.acc-container label:hover:after,
-.acc-container input:checked + label:hover:after{
+.acc-container:hover label:after{
+/* .acc-container:hover input:checked + label:after{ */
     content: '';
     position: absolute;
     width: 24px;
@@ -80,6 +79,36 @@
     background: transparent url(./assets/icon/plus.svg) no-repeat center center;  
 }
 
-.acc-container input:checked + label:hover:after {
+.acc-container:hover input:checked + label:after {
     background-image: url(./assets/icon/cancel-circle.svg);
+}
+
+.acc-container article{
+	background: rgba(255, 255, 255, 0.5);
+	margin-top: -1px;
+	overflow: hidden;
+	height: 0px;
+	position: relative;
+	z-index: 10;
+	transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+}
+
+.acс-container input:checked ~ article{
+	transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
+}
+.acc-container input:checked ~ article.acc-smile-1{
+	height: 260px;
+}
+.acc-container input:checked ~ article.acc-smile-2{
+	height: 260px;
+}
+.acc-container input:checked ~ article.acc-smile-3{
+	height: 260px;
+}
+.acc-container input:checked ~ article.acc-smile-4{
+	height: 260px;
+}
+.acc-container input:checked ~ article.acc-smile-5{
+	height: 260px;
 }
