@@ -166,6 +166,10 @@ html {
         background: transparent url(./assets/icon/plus.svg) no-repeat center center;
     }
 
+    .acc-container input:checked+label:after {
+        background-image: none;
+    }
+
     .acc-container:hover input:checked+label:after {
         background-image: url(./assets/icon/cancel-circle.svg);
     }
