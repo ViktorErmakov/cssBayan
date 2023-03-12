@@ -1,114 +1,205 @@
+html {
+    font-size: 10px;
+}
 
 .acc-container,
-.heading{
-    width: 400px;
-    margin: 10px auto 30px auto;
+.heading {
+    width: 40rem;
+    margin: 2rem auto 3rem auto;
 }
 
-.heading{
+.heading {
     font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
+    font-size: 3rem;
 }
 
-.smile{
-    width: 200px;
-    height: 200px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+.smile {
+    width: 20rem;
+    height: 20rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.acc-container article{
+.acc-container article {
     display: flex;
     justify-content: center;
 }
 
-.acc-container input{
+.acc-container input {
     display: none;
 }
 
 /* C помощью него мы будем симулировать нажатие на input. Добавим относительное позиционирование и z-index. Для красоты отображения укажем градиент:  */
-.acc-container label{
+.acc-container label {
     font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-    padding: 5px 20px;
+    padding: 0.5rem 2rem;
     position: relative;
     z-index: 20;
     display: block;
-    height: 30px;
+    height: 3rem;
     cursor: pointer;
     color: #777;
-    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
-    line-height: 33px;
-    font-size: 19px;
-    background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea));
-	background: -webkit-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-	background: -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-	background: -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-	background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
-	box-shadow: 
-		0px 0px 0px 1px rgba(155,155,155,0.3), 
-		1px 0px 0px 0px rgba(255,255,255,0.9) inset, 
-		0px 2px 2px rgba(0,0,0,0.1);
+    /* text-shadow: 1px 1px 1px rgba(255,255,255,0.8); */
+    line-height: 3.3rem;
+    font-size: 1.9rem;
+    /* background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%); */
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea)); */
+    background: -webkit-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+    /* background: -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%); */
+    /* background: -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%); */
+    /* background: linear-gradient(top, #ffffff 1%,#eaeaea 100%); */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 ); */
+    box-shadow:
+        0rem 0rem 0rem 0.1rem rgba(155, 155, 155, 0.3),
+        0.1rem 0rem 0rem 0rem rgba(255, 255, 255, 0.9) inset,
+        0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 
-.acc-container label:hover{
-    background: #fff;
-}
+
 
 /* при открытом блоке меню: */
-.acc-container input:checked + label,
-.acc-container input:checked + label:hover{
+.acc-container input:checked+label {
     background: #c6e1ec;
     color: #3d7489;
-    text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
-    box-shadow: 
-        0px 0px 0px 1px rgba(155,155,155,0.3), 
-        0px 2px 2px rgba(0,0,0,0.1);
+    text-shadow: 0rem 0.1rem 0.1rem rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0rem 0rem 0rem 0.1rem rgba(155, 155, 155, 0.3),
+        0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 
-/* С помощью псевдо-класса :after добавим иконки стрелочек вверх и вниз для label при наведении */
-.acc-container:hover label:after{
-/* .acc-container:hover input:checked + label:after{ */
+/* С помощью псевдо-класса :after добавим иконки */
+.acc-container label:after {
     content: '';
     position: absolute;
-    width: 24px;
-    height: 24px;
-    right: 13px;
-    top: 7px;
-    background: transparent url(./assets/icon/plus.svg) no-repeat center center;  
+    width: 2.4rem;
+    height: 2.4rem;
+    right: 1.3rem;
+    top: 0.7rem;
+    background: transparent url(./assets/icon/plus.svg) no-repeat center center;
 }
 
-.acc-container:hover input:checked + label:after {
-    background-image: url(./assets/icon/cancel-circle.svg);
+.acc-container article {
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: -0.1rem;
+    overflow: hidden;
+    height: 0rem;
+    position: static;
+    z-index: 10;
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
 }
 
-.acc-container article{
-	background: rgba(255, 255, 255, 0.5);
-	margin-top: -1px;
-	overflow: hidden;
-	height: 0px;
-	position: relative;
-	z-index: 10;
-	transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+.acс-container input:checked~article {
+    transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    box-shadow: 0rem 0rem 0rem 0.1rem rgba(155, 155, 155, 0.3);
 }
 
-.acс-container input:checked ~ article{
-	transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
-	box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
+.acc-container input:checked~article.acc-smile-1 {
+    height: 26rem;
 }
-.acc-container input:checked ~ article.acc-smile-1{
-	height: 260px;
+
+.acc-container input:checked~article.acc-smile-2 {
+    height: 26rem;
 }
-.acc-container input:checked ~ article.acc-smile-2{
-	height: 260px;
+
+.acc-container input:checked~article.acc-smile-3 {
+    height: 26rem;
 }
-.acc-container input:checked ~ article.acc-smile-3{
-	height: 260px;
+
+.acc-container input:checked~article.acc-smile-4 {
+    height: 26rem;
 }
-.acc-container input:checked ~ article.acc-smile-4{
-	height: 260px;
+
+.acc-container input:checked~article.acc-smile-5 {
+    height: 26rem;
 }
-.acc-container input:checked ~ article.acc-smile-5{
-	height: 260px;
+
+.acc-container input:active+label {
+    color: red;
+}
+
+.acc-container input:active+label:after {
+    background-image: url(./assets/icon/plus\ red.svg);
+}
+
+@media (min-width: 820px) {
+    html{
+        font-size: 11px;    
+    }
+}
+
+@media (min-width: 1295px) {
+
+    html{
+        font-size: 11px;
+    }
+    .acc-container label:hover {
+        background: #fff;
+    }
+
+    /* при открытом блоке меню: */
+    .acc-container input:checked+label:hover {
+        background: #c6e1ec;
+        color: #3d7489;
+        text-shadow: 0rem 0.1rem 0.1rem rgba(255, 255, 255, 0.6);
+        box-shadow:
+            0rem 0rem 0rem 0.1rem rgba(155, 155, 155, 0.3),
+            0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+    }
+
+    .acc-container label:after {
+        background-image: none;
+    }
+
+    /* С помощью псевдо-класса :after добавим иконки стрелочек вверх и вниз для label при наведении */
+    .acc-container:hover label:after {
+        /* .acc-container:hover input:checked + label:after{ */
+        content: '';
+        position: absolute;
+        width: 2.4rem;
+        height: 2.4rem;
+        right: 1.3rem;
+        top: 0.7rem;
+        background: transparent url(./assets/icon/plus.svg) no-repeat center center;
+    }
+
+    .acc-container:hover input:checked+label:after {
+        background-image: url(./assets/icon/cancel-circle.svg);
+    }
+
+    .acc-container input:hover~article,
+    .acc-container article:hover {
+        transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+        box-shadow: 0rem 0rem 0rem 0.1rem rgba(155, 155, 155, 0.3);
+    }
+
+    .acc-container input:hover~article.acc-smile-1,
+    .acc-container article.acc-smile-1:hover {
+        height: 26rem;
+    }
+
+    .acc-container input:hover~article.acc-smile-2,
+    .acc-container article.acc-smile-2:hover {
+        height: 26rem;
+    }
+
+    .acc-container input:hover~article.acc-smile-3,
+    .acc-container article.acc-smile-3:hover {
+        height: 26rem;
+    }
+
+    .acc-container input:hover~article.acc-smile-4,
+    .acc-container article.acc-smile-4:hover {
+        height: 26rem;
+    }
+
+    .acc-container input:hover~article.acc-smile-5,
+    .acc-container article.acc-smile-5:hover {
+        height: 26rem;
+    }
+
+    .acc-container input:active~article>img {
+        transition: all 0.1s ease-in-out;
+        filter: sepia(1);
+    }
+
 }
